@@ -1,0 +1,70 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Cloud Compute {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center">
+                    <a href="{% url 'service' %}">Launch Instances</a>
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Launch AWS Instances From Variety Of Instance Types Reliably Experiencing The Scalabality And
+                    Infrastructure On Demand
+                </p>
+                <form action="{% url 'service' %}"  method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="instance" class="btn btn-fill btn-primary">Launch Instances</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">Wordpress Hosting</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Availing Isolated Wordpress Environment On AWS With Fast And Secure Network
+                </p>
+                <form action="{% url 'wordpress' %}"  method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="wordpress" class="btn btn-fill btn-primary">Launch Wordpress Site</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">Web Dev Environment</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Develop, Integrate And Deploy Using AWS EC2 Services
+                </p>
+                <form action="{% url 'web_dev' %}"  method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="web" class="btn btn-fill btn-primary">Launch Server</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

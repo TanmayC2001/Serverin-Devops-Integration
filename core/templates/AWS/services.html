@@ -1,0 +1,322 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}
+{% if service == 'instance' %}
+EC2
+{% endif %}
+{% if service == 'wordpress' %}
+Wordpress
+{% endif %}
+{% if service == 'server' %}
+Web Dev Environment
+{% endif %}
+{% endblock title %}
+
+
+{% block content %}
+
+{% if service == 'instance' %}
+
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center">
+                    <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/8/"
+                        target="_blank">RHEL 8</a>
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="https://liquidat.files.wordpress.com/2019/08/img-rhel-8-hero-desktop.png" width='100'
+                        alt="RHEL 8">
+                </p>
+                <form action="{% url 'instances' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="rhel" class="btn btn-fill btn-primary">Launch
+                        RHEL 8</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a
+                        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html"
+                        target="_blank">AMI Linux</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="https://4.bp.blogspot.com/-LJDTU2vJq64/WwaCwkkX7LI/AAAAAAAAvPs/r773rY_IYOggJgsjsEyF72K0KPuIGG34gCLcBGAs/s1600/timezoneawslinux.png"
+                        width="100" alt="AMI Linux">
+                </p>
+                <form action="{% url 'instances' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="amazon" class="btn btn-fill btn-primary">Launch
+                        AMI Linux</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="https://help.ubuntu.com/" target="_blank">Ubuntu</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="
+                    https://aboutssl.org/wp-content/uploads/2015/06/ubuntu-logo.jpg" alt="Ubuntu" width="100">
+                </p>
+                <form action="{% url 'instances' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="ubuntu" class="btn btn-fill btn-primary">Launch
+                        Ubuntu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% if service == 'wordpress' %}
+
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center">
+                    <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/8/"
+                        target="_blank">RHEL 8</a>
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="https://liquidat.files.wordpress.com/2019/08/img-rhel-8-hero-desktop.png" width='100'
+                        alt="RHEL 8">
+                </p>
+                <form action="{% url 'wordpress' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="rhel" class="btn btn-fill btn-primary">Launch
+                        RHEL 8</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a
+                        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html"
+                        target="_blank">AMI Linux</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="https://4.bp.blogspot.com/-LJDTU2vJq64/WwaCwkkX7LI/AAAAAAAAvPs/r773rY_IYOggJgsjsEyF72K0KPuIGG34gCLcBGAs/s1600/timezoneawslinux.png"
+                        width="100" alt="AMI Linux">
+                </p>
+                <form action="{% url 'wordpress' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="amazon" class="btn btn-fill btn-primary">Launch
+                        AMI Linux</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="https://help.ubuntu.com/" target="_blank">Ubuntu</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="
+                    https://aboutssl.org/wp-content/uploads/2015/06/ubuntu-logo.jpg" alt="Ubuntu" width="100">
+                </p>
+                <form action="{% url 'wordpress' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="ubuntu" class="btn btn-fill btn-primary">Launch
+                        Ubuntu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+{% if service == 'web' %}
+
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center">
+                    <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/8/"
+                        target="_blank">RHEL 8</a>
+                </h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="https://liquidat.files.wordpress.com/2019/08/img-rhel-8-hero-desktop.png" width='100'
+                        alt="RHEL 8">
+                </p>
+                <form action="{% url 'web_dev' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="rhel" class="btn btn-fill btn-primary">Launch
+                        RHEL 8</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a
+                        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html"
+                        target="_blank">AMI Linux</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="https://4.bp.blogspot.com/-LJDTU2vJq64/WwaCwkkX7LI/AAAAAAAAvPs/r773rY_IYOggJgsjsEyF72K0KPuIGG34gCLcBGAs/s1600/timezoneawslinux.png"
+                        width="100" alt="AMI Linux">
+                </p>
+                <form action="{% url 'web_dev' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="amazon" class="btn btn-fill btn-primary">Launch
+                        AMI Linux</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="https://help.ubuntu.com/" target="_blank">Ubuntu</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    <img src="
+                    https://aboutssl.org/wp-content/uploads/2015/06/ubuntu-logo.jpg" alt="Ubuntu" width="100">
+                </p>
+                <form action="{% url 'web_dev' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="button" value="ubuntu" class="btn btn-fill btn-primary">Launch
+                        Ubuntu</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+
+{%if url%}
+
+<h1>
+    <a href="{{ url }}" target="_blank" rel="noopener noreferrer">
+        Click Here <- Way To Terminal</a>
+</h1>
+<h3>Username - root</h3>
+<h3>Password - server</h3>
+<form action="{% url 'terminate_instance' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value={{instance_type}} name='Terminate_Button'>Terminate
+        The Instance</button>
+
+</form>
+
+{% endif %}
+
+{% if msg %}
+
+<h1>
+    {{msg}}
+</h1>
+<form action="{% url 'terminate_instance' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value={{instance_type}} name='Terminate_Button'>Terminate
+        The Instance</button>
+
+</form>
+{% endif %}
+
+{% if dns_msg %}
+
+<h1>
+    {{dns_msg}}
+</h1>
+<form action="{% url 'terminate_instance' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value="WP" name='Terminate_Button'>Terminate
+        The Instance</button>
+
+</form>
+{% endif %}
+
+{%if dns %}
+
+<h1>
+    <a href="{{ dns }}" target="_blank" rel="noopener noreferrer">
+        Click Here <- Way To Wordpress</a>
+</h1>
+
+<form action="{% url 'terminate_instance' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value="WP" name='Terminate_Button'>Terminate
+You Wordpress Site</button>
+
+</form>
+{% endif %}
+
+{%if web_dev_ip %}
+
+<h1>
+    <a href="{{ web_dev_ip }}" target="_blank" rel="noopener noreferrer">
+        Click Here <- Way To Load Balancer</a>
+</h1>
+
+<form action="{% url 'terminate_instance' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value="lb" name='Terminate_Button'>Terminate
+        The Load Balancer</button>
+</form>
+{% endif %}
+
+{% if web_dev_msg %}
+
+<h1>
+    {{ web_dev_msg }}
+</h1>
+
+<form action="{% url 'terminate_instance' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value="lb" name='Terminate_Button'>Terminate
+        The Instance</button>
+</form>
+{% endif %}
+{% endblock content %}

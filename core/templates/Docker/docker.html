@@ -1,0 +1,95 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Work Desk {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+{% if msg %}
+
+<div class="alert alert-info">
+    <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+        <i class="tim-icons icon-simple-remove"></i>
+    </button>
+    <span>{{msg}}</span>
+</div>
+
+{% endif %}
+
+{% comment %} <div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">Webserver</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Providing You A Platform To Host Your Websites.
+                </p>
+                <button type="submit" class="btn btn-fill btn-primary">Launch Webserver</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">Programming Environment</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    An Environment For Scripting And Testing Your Codes Of C, C++, Python And Java.
+                </p>
+                <button type="submit" class="btn btn-fill btn-primary">Launch Programming Environment</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endcomment %}
+<div class="row text-center">
+    {% comment %}
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">Load Balancer Services</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Distribute The Load Of Your Service On Various Servers Increasing Time, Throughput And Speed.
+                </p>
+                <button type="submit" class="btn btn-fill btn-primary">Launch Load Balancer Services</button>
+            </div>
+        </div>
+    </div>
+    {% endcomment %}
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">ML Deployable Environment</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Provides You ML Model Environment For Processing And Deployment.
+                </p>
+                <form action="{% url 'docker_service' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="ml" value="ML" class="btn btn-fill btn-primary">Launch ML Deployable
+                        Environment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+

@@ -1,0 +1,418 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Documentation {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+{% if aws %}
+
+<h1>
+
+    <span style="color: #3598db;">
+        AWS Documentation
+    </span>
+
+</h1>
+
+<p style="text-align: center;">
+
+    <img src="https://media.webteam.puppet.com/uploads/2019/10/Logo-AWS.jpg" alt="Amazon" width="140" height="100" />
+
+</p>
+
+<p>
+
+    <strong>
+        Amazon Web Services (AWS)
+    </strong>
+    &nbsp;started to offer IT services to the market in the form of web services, which is nowadays known as&nbsp;
+    <strong>
+        cloud computing
+    </strong>
+    . With this cloud, we need not plan for servers and other IT infrastructure which takes up much of time in advance.
+    Instead, these services can instantly spin up hundreds or thousands of servers in minutes and deliver results
+    faster. We pay only for what we use with no up-front expenses and no long-term commitments, which makes AWS cost
+    efficient.
+</p>
+
+<p>
+    AWS has significantly more services, and more features within those services, than any other cloud
+    provider&ndash;from infrastructure technologies like compute, storage, and databases&ndash;
+</p>
+
+<p>
+    to emerging technologies, such as machine learning and artificial intelligence, data lakes and analytics, and
+    Internet of Things.
+</p>
+
+<p>
+    This makes it faster, easier, and more cost effective to move your existing applications to the cloud and build
+    nearly anything you can imagine.
+</p>
+
+<p>
+    &nbsp;
+</p>
+
+<p>
+    AWS has the most extensive global cloud infrastructure. No other cloud provider offers as many Regions with multiple
+    Availability Zones connected by low latency, high throughput, and highly redundant networking. AWS has 80
+    Availability Zones within 25 geographic regions around the world, and has announced plans for 15 more Availability
+    Zones and 5 more AWS Regions in Australia, India, Indonesia, Spain, and Switzerland.
+</p>
+
+<p>
+    &nbsp;The AWS Region/Availability Zone model has been recognized by Gartner as
+</p>
+
+<p>
+    the recommended approach for running enterprise applications that require high availability.
+</p>
+
+<p style="color: #c8ff00;">
+    To dive deep in AWS go for -
+    <a href="https://docs.aws.amazon.com/" target="_blank" rel="noopener noreferrer">AWS Official Documentation</a>
+</p>
+{% endif %}
+
+{% if hadoop %}
+
+<h1>
+
+    <span style="color: #3598db;">
+        Hadoop Documentation
+    </span>
+
+</h1>
+
+<p style="text-align: center;">
+
+    <img src="https://blog.gft.com/wp-content/uploads/2014/10/Hadoop-Logo11.jpg" alt="Hadoop" width="280"
+        height="134" />
+
+</p>
+
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Apache Hadoop is an open source framework that is used to efficiently
+    store and process large datasets ranging in size from gigabytes to petabytes of data. Instead of using one large
+    computer to store and process the data, Hadoop allows clustering multiple computers to analyze massive datasets in
+    parallel more quickly.
+</p>
+
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This large sets of data is technically termed as Big Data. Big Data can be
+    the data that is difficult to process on a single machine. The problems with Big Data is not only the size . There
+    are three V&rsquo;s associated with Big Data that makes it difficult to process on a single machine.
+</p>
+
+<ol>
+
+    <li style="line-height: 1.5;">
+
+        <strong>
+            Volume&nbsp;
+        </strong>
+        : The size of the data being generated.
+    </li>
+
+    <li style="line-height: 1.5;">
+
+        <strong>
+            Velocity&nbsp;
+        </strong>
+        : The rate at which the data is being generated
+    </li>
+
+    <li style="line-height: 1.5;">
+
+        <strong>
+            Variety
+        </strong>
+        : the different sources and formats in which the data is coming
+    </li>
+
+</ol>
+
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hadoop was inspired by Google&rsquo;s Map Reduce and Google Files System
+    projects. The idea was to develop an open source framework where anyone can write map reduce jobs without worrying
+    about Hardware Failures.
+</p>
+
+<p>
+    Hadoop consists of four main modules:
+</p>
+
+<ol>
+
+    <li style="line-height: 1.5;">
+        HDFS
+    </li>
+
+    <li style="line-height: 1.5;">
+        YARN
+    </li>
+
+    <li style="line-height: 1.5;">
+        Map Reduce
+    </li>
+
+    <li style="line-height: 1.5;">
+        Hadoop common
+    </li>
+
+</ol>
+
+<h2>
+
+    <strong>
+        Working of Hadoop:
+    </strong>
+
+</h2>
+
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Hadoop provides the building blocks on which other services and applications can
+    be built.
+</p>
+
+<p>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Applications that collect data in various formats can place data into the Hadoop
+    cluster by using an API operation to connect to the NameNode. The NameNode tracks the file directory structure and
+    placement of &ldquo;chunks&rdquo; for each file, replicated across DataNodes. To run a job to query the data,
+    provide a
+    <a href="https://aws.amazon.com/emr/">
+        MapReduce
+    </a>
+    &nbsp;job made up of many map and reduce tasks that run against the data in HDFS spread across the DataNodes. Map
+    tasks run on each node against the input files supplied, and reducers run to aggregate and organize the final
+    output.
+</p>
+
+<p>
+
+    <img style="display: block; margin-left: auto; margin-right: auto;"
+        src="https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/02/Hadoop-Architecture2-01.jpg"
+        alt="Hadoop Features" width="585" height="306" />
+
+</p>
+
+<h2>
+
+    <strong>
+        Features of Hadoop:
+    </strong>
+
+</h2>
+
+<ol>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        Hadoop is open-source, which means it is free to use. Since it is an open-source project the source-code is
+        available online for anyone to understand it or make some modifications as per their industry requirement.
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        Hadoop is a highly scalable model. A large amount of data is divided into multiple inexpensive machines in a
+        cluster which is processed parallelly. the number of these machines or nodes can be increased or decreased as
+        per the enterprise&rsquo;s requirements
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        In Hadoop data is replicated on various DataNodes in a Hadoop cluster which ensures the availability of data if
+        somehow any of your systems got crashed. You can read all of the data from a single machine if this machine
+        faces a technical issue data can also be read from other nodes in a Hadoop cluster because the data is copied or
+        replicated by default. By default, Hadoop makes 3 copies of each file block and stored it into different nodes.
+        This replication factor is configurable and can be changed by changing the replication property in the&nbsp;
+        <em>
+            hdfs-site.xml
+        </em>
+
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        High Availability means the availability of data on the Hadoop cluster. Due to fault tolerance in case if any of
+        the DataNode goes down the same data can be retrieved from any other node where the data is replicated. The High
+        available Hadoop cluster also has 2 or more than two Name Node i.e. Active NameNode and Passive NameNode also
+        known as stand by NameNode. In case if Active NameNode fails then the Passive node will take the responsibility
+        of Active Node and provide the same data as that of Active NameNode which can easily be utilized by the user.
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        Hadoop is open-source and uses cost-effective commodity hardware which provides a cost-efficient model, unlike
+        traditional Relational databases that require expensive hardware and high-end processors to deal with Big Data.
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        Hadoop is designed in such a way that it can deal with any kind of dataset like structured(MySql Data),
+        Semi-Structured(XML, JSON), Un-structured (Images and Videos) very efficiently.&nbsp;
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        The concept of Data Locality is used to make Hadoop processing fast.
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        Hadoop uses a distributed file system to manage its storage i.e. HDFS(Hadoop Distributed File System). In
+        DFS(Distributed File System) a large size file is broken into small size file blocks then distributed among the
+        Nodes available in a Hadoop cluster, as this massive number of file blocks are processed parallelly which makes
+        Hadoop faster, because of which it provides a High-level performance as compared to the traditional DataBase
+        Management Systems.
+    </li>
+
+</ol>
+
+<p style="color: #c8ff00;">
+    To know more about Hadoop go for -
+    <a href="http://hadoop.apache.org/docs/current/" target="_blank" rel="noopener noreferrer">Hadoop Official
+        Documentation</a>
+</p>
+
+{% endif %}
+
+{% if docker %}
+
+<h1 style="text-align: justify;">
+
+    <span style="color: #3598db;">
+        Docker Documentation
+    </span>
+
+</h1>
+
+<p>
+
+    <span style="color: #3598db;">
+
+        <img style="display: block; margin-left: auto; margin-right: auto;"
+            src="https://www.rorymon.com/blog/wp-content/uploads/2016/10/large_v-trans.png" alt="Docker" width="376"
+            height="335" />
+
+    </span>
+
+</p>
+
+<p style="text-align: justify;">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Docker provides the ability to package and run an application in a loosely
+    isolated environment called a container. The isolation and security allow you to run many containers simultaneously
+    on a given host. Containers are lightweight and contain everything needed to run the application, so you do not need
+    to rely on what is currently installed on the host. You can easily share containers while you work, and be sure that
+    everyone you share with gets the same container that works in the same way.
+</p>
+
+<p style="text-align: justify;">
+    Docker provides tooling and a platform to manage the lifecycle of your containers:
+</p>
+
+<ol style="text-align: justify;">
+
+    <li style="line-height: 1.5; text-align: justify;">
+        Develop your application and its supporting components using containers.
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        The container becomes the unit for distributing and testing your application.
+    </li>
+
+    <li style="line-height: 1.5; text-align: justify;">
+        When you&rsquo;re ready, deploy your application into your production environment, as a container or an
+        orchestrated service. This works the same whether your production environment is a local data center, a cloud
+        provider, or a hybrid of the two.
+    </li>
+
+</ol>
+
+<h2 style="text-align: justify;">
+
+    <strong>
+        Use case of Docker :
+    </strong>
+
+</h2>
+
+<h3 style="text-align: justify;">
+
+    <strong>
+        Fast, consistent delivery of your applications
+    </strong>
+
+</h3>
+
+<p style="text-align: justify;">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Docker streamlines the development lifecycle by allowing developers to
+    work in standardized environments using local containers which provide your applications and services. Containers
+    are great for continuous integration and continuous delivery (CI/CD) workflows.
+</p>
+
+<p style="text-align: justify;">
+    Consider the following example scenario:
+</p>
+
+<ol style="text-align: justify;">
+
+    <li style="line-height: 1.5;">
+        Your developers write code locally and share their work with their colleagues using Docker containers.
+    </li>
+
+    <li style="line-height: 1.5;">
+        They use Docker to push their applications into a test environment and execute automated and manual tests.
+    </li>
+
+    <li style="line-height: 1.5;">
+        When developers find bugs, they can fix them in the development environment and redeploy them to the test
+        environment for testing and validation.
+    </li>
+
+    <li style="line-height: 1.5;">
+        When testing is complete, getting the fix to the customer is as simple as pushing the updated image to the
+        production environment.
+    </li>
+
+</ol>
+
+<h2 style="text-align: justify;">
+
+    <strong>
+        Responsive deployment and scaling
+    </strong>
+
+</h2>
+
+<p style="text-align: justify;">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Docker&rsquo;s container-based platform allows for highly portable
+    workloads. Docker containers can run on a developer&rsquo;s local laptop, on physical or virtual machines in a data
+    center, on cloud providers, or in a mixture of environments.
+</p>
+
+<p style="text-align: justify;">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Docker&rsquo;s portability and lightweight nature also make it easy to
+    dynamically manage workloads, scaling up or tearing down applications and services as business needs dictate, in
+    near real time.
+</p>
+
+<h2 style="text-align: justify;">
+
+    <strong>
+        Running more workloads on the same hardware
+    </strong>
+
+</h2>
+
+<p style="text-align: justify;">
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Docker is lightweight and fast. It provides a viable, cost-effective
+    alternative to hypervisor-based virtual machines, so you can use more of your compute capacity to achieve your
+    business goals. Docker is perfect for high density environments and for small and medium deployments where you need
+    to do more with fewer resources.
+</p>
+
+<p style="color: #c8ff00;">
+    To know more about Docker go for -
+    <a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer">Docker Official
+        Documentation</a>
+</p>
+{% endif %}
+
+{% endblock content %}
