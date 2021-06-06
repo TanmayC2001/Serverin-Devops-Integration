@@ -1,0 +1,155 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Storage Chamber {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+{% if url %}
+
+<h1>
+    <a href="{{ url }}" target="_blank" rel="noopener noreferrer">Click Here</a>
+    <-- To Access Storage Cluster 
+</h1>
+
+{% if uploaded_file_url %}
+            <h1></h1><a href="{{ uploaded_file_url }}" target="_blank" rel="noopener noreferrer">Your Uploaded File</a></h1>
+            {% endif %}
+
+        {% endif %}
+
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h5 class="card-category"></h5>
+                        <h3 class="card-title text-center"><a href="{% url 'aws' %}">Upload Files</a></h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                            <div class="mb-1">
+                                <input class="input" name="myfile" type="file" id="formFileMultiple" multiple>
+                            </div>
+
+                            <p>
+                                Upload Or Download Your Data To The Hadoop Cluster Here
+                            </p>
+                            <button type="submit" class="btn btn-fill btn-primary">Upload   Files</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            
+            <!-- <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">Update File System</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Update Your Data In The File System
+                </p>
+                <button type="submit" class="btn btn-fill btn-primary">Update File System</button>
+            </div>
+        </div>
+        -->
+        </div>
+
+        <div class="bd-example">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                </ol>
+            </nav>
+
+            <div class="list-group">
+
+                <label class="list-group-item">
+
+                    <input class="" type="checkbox" value="" />
+                    First checkbox
+                    <span class="ml-5 badge bg-primary rounded-pill">Download</span>
+                    <span class="badge bg-primary rounded-pill">Edit</span>
+                    <span class="badge bg-primary rounded-pill">Delete</span>
+                </label>
+
+                <label class="list-group-item">
+
+                    <input class="" type="checkbox" value="" />
+                    &nbsp;Second checkbox
+                    <span class="ml-5 badge bg-primary rounded-pill">Download</span>
+                    <span class="badge bg-primary rounded-pill">Edit</span>
+                    <span class="badge bg-primary rounded-pill">Delete</span>
+                </label>
+
+                <label class="list-group-item">
+
+                    <input class="" type="checkbox" value="" />
+                    &nbsp;Third checkbox
+                    <span class="ml-5 badge bg-primary rounded-pill">Download</span>
+                    <span class="badge bg-primary rounded-pill">Edit</span>
+                    <span class="badge bg-primary rounded-pill">Delete</span>
+                </label>
+
+                <label class="list-group-item">
+
+                    <input class="" type="checkbox" value="" />
+                    &nbsp;Fourth checkbox
+                    <span class="ml-5 badge bg-primary rounded-pill">Download</span>
+                    <span class="badge bg-primary rounded-pill">Edit</span>
+                    <span class="badge bg-primary rounded-pill">Delete</span>
+                </label>
+
+                <label class="list-group-item">
+
+                    <input class=" " type="checkbox" value="" />
+                    &nbsp;Fifth checkbox
+                    <span class="ml-5 badge bg-primary rounded-pill">Download</span>
+                    <span class="badge bg-primary rounded-pill">Edit</span>
+                    <span class="badge bg-primary rounded-pill">Delete</span>
+                </label>
+
+            </div>
+
+        </div>
+        <!--
+</div>
+<div class="row text-center">
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">List Folders/Files</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Get The List Of Your Uploaded Folders/Files
+                </p>
+                <button type="submit" class="btn btn-fill btn-primary">List Folders/Files</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card card-chart">
+            <div class="card-header">
+                <h5 class="card-category"></h5>
+                <h3 class="card-title text-center"><a href="{% url 'aws' %}">+/- Volume</a></h3>
+            </div>
+            <div class="card-body">
+                <p>
+                    Increase Or Decrease The Volume Size As Per Requirements
+                </p>
+                <button type="submit" class="btn btn-fill btn-primary">+/- Volume</button>
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+        {% endblock content %}

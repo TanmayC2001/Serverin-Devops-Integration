@@ -1,0 +1,33 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Work Desk {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+{% if msg %}
+<h1>{{ msg }}</h1>
+<form action="{% url 'terminate_model' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value="ML" name='Terminate_Button'>Terminate
+        The Instance</button>
+</form>
+{% endif %}
+
+{% if url %}
+<h1>
+    SAMPLE MODEL ->
+    <a href="{{ url }}" target="_blank" rel="noopener noreferrer">
+        CLICK HERE (Pima Diebetics MODEL)
+    </a>
+</h1>
+<form action="{% url 'terminate_model' %}" method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-fill btn-primary" value="ML" name='Terminate_Button'>Terminate
+        The Instance</button>
+</form>
+{% endif %}
+
+{% endblock content %}

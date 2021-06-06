@@ -1,0 +1,67 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Login {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+        <div class="row mx-auto">
+          <div class="col-md-12 text-center">
+            <div class="card">
+
+              <form role="form" method="post" action="">
+              
+                {% csrf_token %} 
+
+                <div class="card-header">
+                  <h5 class="title">Login</h5>
+
+                  <h6 class="card-category">
+                      {% if msg %}
+                        <span class="text-danger">{{ msg | safe }}</span>
+                      {% else %}
+                        Add your credentials
+                      {% endif %}  
+                  </h6>
+                </div>
+
+                <div class="card-body">
+
+                    <div class=" mx-auto">
+
+                      <div class="col-5 mx-auto px-md-1">
+                        <div class="form-group">
+                          <label>Username</label>
+                          {{ form.username }}
+                        </div>
+                      </div>
+
+                      <div class="col-md-5 mx-auto px-md-1">
+                        <div class="form-group">
+                          <label>Password</label>
+                          {{ form.password }}
+                        </div>
+                      </div>
+
+                    </div>
+                    
+                </div>
+                <div class="card-footer">
+                  <button type="submit" name="login" class="btn btn-fill btn-primary">Login</button>
+                  &nbsp; &nbsp;
+                  Don't have an account? <a href="{% url 'register' %}" class="text-primary">Create</a>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+      </div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Storage Chamber {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+{% if url %}
+
+<h1>
+    <a href="{{ url }}" target="_blank" rel="noopener noreferrer">Click Here</a>
+    <-- To Access Storage Cluster 
+</h1>
+
+{% if uploaded_file_url %}
+            <h1></h1><a href="{{ uploaded_file_url }}" target="_blank" rel="noopener noreferrer">Your Uploaded File</a></h1>
+            {% endif %}
+
+        {% endif %}
+
+
+
+{% endblock content %}
